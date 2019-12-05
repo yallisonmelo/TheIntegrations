@@ -16,6 +16,10 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <sonar.projectKey>yallisonmelo_TheIntegrations</sonar.projectKey>
+        <sonar.organization>yallisonmelo</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.login>caa0c80a3256b5357d0667eb21cbb9300a9ecf50</sonar.login>
     </properties>
 
     <dependencies>
@@ -78,13 +82,7 @@
                 <scope>import</scope>
             </dependency>
         </dependencies>
-    </dependencyManagement
-    <properties>
-        <sonar.projectKey>yallisonmelo_TheIntegrations</sonar.projectKey>
-        <sonar.organization>yallisonmelo</sonar.organization>
-        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-        <sonar.login>caa0c80a3256b5357d0667eb21cbb9300a9ecf50</sonar.login>
-    </properties>
+    </dependencyManagement>
     <build>
         <plugins>
             <plugin>
