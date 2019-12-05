@@ -1,8 +1,8 @@
-package com.yfsmsystem.theapp.service.impl;
+package com.yfsmsystem.theintegrations.service.impl;
 
-import com.yfsmsystem.theapp.components.ModelMapperComponent;
-import com.yfsmsystem.theapp.consumer.ViaCepIntegracao;
-import com.yfsmsystem.theapp.dto.ViaCepDto;
+import com.yfsmsystem.theintegrations.components.ModelMapperComponent;
+import com.yfsmsystem.theintegrations.consumer.ViaCepIntegracao;
+import com.yfsmsystem.theintegrations.dto.ViaCepDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

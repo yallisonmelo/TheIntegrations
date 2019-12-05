@@ -1,4 +1,4 @@
-package com.yfsmsystem.theapp.response;
+package com.yfsmsystem.theintegrations.response;
 
 
 import lombok.AllArgsConstructor;

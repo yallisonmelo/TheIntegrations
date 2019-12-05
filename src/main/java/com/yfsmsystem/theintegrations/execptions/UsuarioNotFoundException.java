@@ -1,4 +1,4 @@
-package com.yfsmsystem.theapp.execptions;
+package com.yfsmsystem.theintegrations.execptions;
 
 public class UsuarioNotFoundException extends RuntimeException {
 

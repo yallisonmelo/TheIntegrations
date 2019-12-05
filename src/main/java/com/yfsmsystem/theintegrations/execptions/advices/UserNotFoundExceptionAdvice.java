@@ -1,7 +1,7 @@
-package com.yfsmsystem.theapp.execptions.advices;
+package com.yfsmsystem.theintegrations.execptions.advices;
 
-import com.yfsmsystem.theapp.execptions.UsuarioNotFoundException;
-import com.yfsmsystem.theapp.response.Error;
+import com.yfsmsystem.theintegrations.execptions.UsuarioNotFoundException;
+import com.yfsmsystem.theintegrations.response.Error;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;

@@ -1,4 +1,4 @@
-package com.yfsmsystem.theapp.entity.dto;
+package com.yfsmsystem.theintegrations.entity.dto;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,12 +1,12 @@
-package com.yfsmsystem.theapp.service.impl;
+package com.yfsmsystem.theintegrations.service.impl;
 
-import com.yfsmsystem.theapp.components.ModelMapperComponent;
-import com.yfsmsystem.theapp.entity.Endereco;
-import com.yfsmsystem.theapp.entity.Usuario;
-import com.yfsmsystem.theapp.entity.dto.UsuarioDto;
-import com.yfsmsystem.theapp.execptions.UsuarioNotFoundException;
-import com.yfsmsystem.theapp.repository.UsuarioRepository;
-import com.yfsmsystem.theapp.service.IUsuarioService;
+import com.yfsmsystem.theintegrations.components.ModelMapperComponent;
+import com.yfsmsystem.theintegrations.entity.Endereco;
+import com.yfsmsystem.theintegrations.entity.Usuario;
+import com.yfsmsystem.theintegrations.entity.dto.UsuarioDto;
+import com.yfsmsystem.theintegrations.execptions.UsuarioNotFoundException;
+import com.yfsmsystem.theintegrations.repository.UsuarioRepository;
+import com.yfsmsystem.theintegrations.service.IUsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

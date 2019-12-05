@@ -1,6 +1,6 @@
-package com.yfsmsystem.theapp.repository;
+package com.yfsmsystem.theintegrations.repository;
 
-import com.yfsmsystem.theapp.entity.Usuario;
+import com.yfsmsystem.theintegrations.entity.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

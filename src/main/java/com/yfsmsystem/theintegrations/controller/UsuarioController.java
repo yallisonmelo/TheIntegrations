@@ -1,8 +1,8 @@
-package com.yfsmsystem.theapp.controller;
+package com.yfsmsystem.theintegrations.controller;
 
-import com.yfsmsystem.theapp.entity.dto.UsuarioDto;
-import com.yfsmsystem.theapp.execptions.UsuarioNotFoundException;
-import com.yfsmsystem.theapp.service.impl.UsuarioServiceImpl;
+import com.yfsmsystem.theintegrations.entity.dto.UsuarioDto;
+import com.yfsmsystem.theintegrations.execptions.UsuarioNotFoundException;
+import com.yfsmsystem.theintegrations.service.impl.UsuarioServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;

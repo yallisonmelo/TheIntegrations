@@ -1,6 +1,5 @@
-package com.yfsmsystem.theapp.response;
+package com.yfsmsystem.theintegrations.response;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

@@ -1,4 +1,4 @@
-package com.yfsmsystem.theapp.entity;
+package com.yfsmsystem.theintegrations.entity;
 
 import lombok.Getter;
 import lombok.Setter;

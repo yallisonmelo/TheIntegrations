@@ -1,4 +1,4 @@
-package com.yfsmsystem.theapp.dto;
+package com.yfsmsystem.theintegrations.dto;
 
 import lombok.Getter;
 import lombok.Setter;

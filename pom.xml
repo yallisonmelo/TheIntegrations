@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.yfsmsystem</groupId>
-    <artifactId>theapp</artifactId>
+    <artifactId>theintegrations</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>theapp</name>
+    <name>theintegrations</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

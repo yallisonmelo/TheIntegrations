@@ -1,4 +1,4 @@
-package com.yfsmsystem.theapp;
+package com.yfsmsystem.theintegrations;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.yfsmsystem.theapp.components;
+package com.yfsmsystem.theintegrations.components;
 
 import org.modelmapper.Conditions;
 import org.modelmapper.ModelMapper;
