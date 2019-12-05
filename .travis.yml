@@ -1,14 +1,12 @@
 language: java
-jdk:
-  - oraclejdk8
-dist: trusty
+sudo: false
+install: true
 
 addons:
   sonarcloud:
-    organization: "yallisonmelo"
-    #token:
-     # secure: "**************************" # encrypted value of your token
+    organization: "sonarcloud"
+    token:
+      secure: "c81976123fe75c8782db48878eca04c7109ef668"
 
-script:
-  #- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=yallisonmelo_TheIntegrations
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
+jdk:
+  - oraclejdk8
