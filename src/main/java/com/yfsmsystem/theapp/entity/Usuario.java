@@ -20,6 +20,7 @@ public class Usuario {
     private String email;
     private String senha;
     private Integer idade;
+    private String celular;
     @OneToMany(mappedBy = "usuario",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     private List<Endereco> endereco;
 }

@@ -13,4 +13,5 @@ public class UsuarioDto {
     private String senha;
     private Integer idade;
     private String cep;
+    private String celular;
 }
