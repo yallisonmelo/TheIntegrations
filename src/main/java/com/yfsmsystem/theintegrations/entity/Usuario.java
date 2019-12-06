@@ -4,13 +4,15 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "usuario")
 @Getter
 @Setter
-public class Usuario {
+public class Usuario implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,6 +23,6 @@ public class Usuario {
     private String senha;
     private Integer idade;
     private String celular;
-    @OneToMany(mappedBy = "usuario",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-    private List<Endereco> endereco;
+    @OneToMany(mappedBy = "usuario",cascade = CascadeType.ALL)
+    private List<Endereco> endereco = new ArrayList<Endereco>();
 }

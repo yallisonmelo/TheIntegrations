@@ -2,12 +2,12 @@ package com.yfsmsystem.theintegrations.service.impl;
 
 import com.yfsmsystem.theintegrations.components.ModelMapperComponent;
 import com.yfsmsystem.theintegrations.entity.Endereco;
+import com.yfsmsystem.theintegrations.entity.NumberVerify;
 import com.yfsmsystem.theintegrations.entity.Usuario;
 import com.yfsmsystem.theintegrations.entity.dto.UsuarioDto;
 import com.yfsmsystem.theintegrations.execptions.UsuarioNotFoundException;
 import com.yfsmsystem.theintegrations.repository.UsuarioRepository;
 import com.yfsmsystem.theintegrations.service.IUsuarioService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -17,12 +17,17 @@ import java.util.Optional;
 @Service
 public class UsuarioServiceImpl implements IUsuarioService {
 
-    @Autowired
-    UsuarioRepository usuarioRepository;
-    @Autowired
-    ModelMapperComponent modelMapper;
-    @Autowired
-    ViaCepServiceImpl viaCepService;
+    private final UsuarioRepository usuarioRepository;
+    private final ModelMapperComponent modelMapper;
+    private final ViaCepServiceImpl viaCepService;
+    private final NumberVerifyServiceImpl numberVerifyService;
+
+    public UsuarioServiceImpl(UsuarioRepository usuarioRepository, ModelMapperComponent modelMapper, ViaCepServiceImpl viaCepService, NumberVerifyServiceImpl numberVerifyService) {
+        this.usuarioRepository = usuarioRepository;
+        this.modelMapper = modelMapper;
+        this.viaCepService = viaCepService;
+        this.numberVerifyService = numberVerifyService;
+    }
 
 
     public List<Usuario> listaTodosUsuario() {
@@ -38,6 +43,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
         List<Endereco> listEndereco = new ArrayList<>();
         Usuario usuario = modelMapper.maping().map(usuarioDto, Usuario.class);
         Endereco endereco = modelMapper.maping().map(viaCepService.retornaDadosEndereco(usuarioDto.getCep()), Endereco.class);
+        NumberVerify numberVerify = modelMapper.maping().map(numberVerifyService.retornaDadosNumeroInformado(usuarioDto.getCelular()), NumberVerify.class);
         listEndereco.add(endereco);
         usuario.setEndereco(listEndereco);
         return usuarioRepository.save(usuario);
