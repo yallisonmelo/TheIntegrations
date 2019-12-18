@@ -1,8 +1,6 @@
 package com.yfsmsystem.theintegrations.consumer;
 
-import com.yfsmsystem.theintegrations.dto.ViaCepDto;
 import com.yfsmsystem.theintegrations.entity.NumberVerify;
-import feign.RequestLine;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

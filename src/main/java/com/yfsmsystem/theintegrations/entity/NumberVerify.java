@@ -1,5 +1,6 @@
 package com.yfsmsystem.theintegrations.entity;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,6 +9,7 @@ import javax.persistence.Table;
 @Getter
 @Setter
 @Table(name = "celular")
+@Builder
 public class NumberVerify {
 
     private Boolean valid;
@@ -20,4 +22,5 @@ public class NumberVerify {
     private String location;
     private String carrier;
     private String line_type;
+    private Usuario usuario;
 }

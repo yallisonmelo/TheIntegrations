@@ -5,7 +5,6 @@ import com.yfsmsystem.theintegrations.execptions.UsuarioNotFoundException;
 import com.yfsmsystem.theintegrations.service.impl.UsuarioServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -27,11 +26,10 @@ public class UsuarioController {
     @GetMapping("/{id}")
     public ResponseEntity retornarUsuarioPorId(@PathVariable Long id) {
         return ResponseEntity.ok().body(usuarioService.retornaUsuarioPorId(id));
-
     }
 
     @PostMapping
-    public ResponseEntity inserirNovoUsuario(@RequestBody @Valid UsuarioDto usuarioDto, BindingResult result) {
+    public ResponseEntity inserirNovoUsuario(@RequestBody  @Valid UsuarioDto usuarioDto) {
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest().path("/{id}")
                 .buildAndExpand(usuarioService.inserirNovoUsuario(usuarioDto).getCodigo()).toUri();
