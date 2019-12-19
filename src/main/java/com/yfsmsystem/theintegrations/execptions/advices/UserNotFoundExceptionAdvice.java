@@ -17,7 +17,7 @@ public class UserNotFoundExceptionAdvice {
         Error error = new Error();
         error.setCode(HttpStatus.NOT_FOUND.toString());
         error.setType(ex.getMessage());
-        error.setType("UserNotFoundException");
+        error.setType("Usuario não encontrado");
         return error;
     }
 }

@@ -1,5 +1,6 @@
 package com.yfsmsystem.theintegrations.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -21,7 +22,6 @@ public class Endereco implements Serializable {
     private String bairro;
     private String localidade;
     private String uf;
-    @ManyToOne(fetch = FetchType.EAGER)
-    Usuario usuario;
-
+    @JsonIgnore
+    private Long usuario_id;
 }

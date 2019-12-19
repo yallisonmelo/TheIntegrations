@@ -1,6 +1,6 @@
 package com.yfsmsystem.theintegrations.controller;
 
-import com.yfsmsystem.theintegrations.entity.dto.UsuarioDto;
+import com.yfsmsystem.theintegrations.dto.UsuarioDto;
 import com.yfsmsystem.theintegrations.execptions.UsuarioNotFoundException;
 import com.yfsmsystem.theintegrations.service.impl.UsuarioServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;

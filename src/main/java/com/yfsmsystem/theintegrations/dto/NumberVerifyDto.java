@@ -1,16 +1,12 @@
-package com.yfsmsystem.theintegrations.entity;
+package com.yfsmsystem.theintegrations.dto;
 
-import lombok.Builder;
+import com.yfsmsystem.theintegrations.entity.Usuario;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Table;
-
 @Getter
 @Setter
-@Table(name = "celular")
-@Builder
-public class NumberVerify {
+public class NumberVerifyDto {
 
     private Boolean valid;
     private String number;
@@ -22,5 +18,4 @@ public class NumberVerify {
     private String location;
     private String carrier;
     private String line_type;
-    private Usuario usuario;
 }

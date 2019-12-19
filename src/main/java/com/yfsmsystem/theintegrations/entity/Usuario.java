@@ -5,7 +5,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -22,7 +21,10 @@ public class Usuario implements Serializable {
     private String email;
     private String senha;
     private Integer idade;
-    private String celular;
-    @OneToMany(mappedBy = "usuario",cascade = CascadeType.ALL)
-    private List<Endereco> endereco = new ArrayList<Endereco>();
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name="usuario_id")
+    private List<Endereco> endereco;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name="usuario_id")
+    private List<Celular>contato;
 }

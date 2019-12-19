@@ -1,10 +1,11 @@
 package com.yfsmsystem.theintegrations.service.impl;
 
 import com.yfsmsystem.theintegrations.components.ModelMapperComponent;
+import com.yfsmsystem.theintegrations.dto.NumberVerifyDto;
+import com.yfsmsystem.theintegrations.dto.UsuarioDto;
+import com.yfsmsystem.theintegrations.entity.Celular;
 import com.yfsmsystem.theintegrations.entity.Endereco;
-import com.yfsmsystem.theintegrations.entity.NumberVerify;
 import com.yfsmsystem.theintegrations.entity.Usuario;
-import com.yfsmsystem.theintegrations.entity.dto.UsuarioDto;
 import com.yfsmsystem.theintegrations.execptions.UsuarioNotFoundException;
 import com.yfsmsystem.theintegrations.repository.UsuarioRepository;
 import com.yfsmsystem.theintegrations.service.IUsuarioService;
@@ -31,27 +32,34 @@ public class UsuarioServiceImpl implements IUsuarioService {
 
 
     public List<Usuario> listaTodosUsuario() {
-        return Optional.ofNullable(usuarioRepository.findAll()).orElseThrow(UsuarioNotFoundException::new);
+        return Optional.of(usuarioRepository.findAll())
+                .filter(e -> !e.isEmpty())
+                .orElseThrow(UsuarioNotFoundException::new);
+
     }
 
-    public Optional<Usuario> retornaUsuarioPorId(Long id) {
-        return Optional.ofNullable(usuarioRepository.findById(id)).orElseThrow(UsuarioNotFoundException::new);
+    public Usuario retornaUsuarioPorId(Long id) {
+
+        return Optional.of(usuarioRepository.findById(id)).map(p -> p.orElseThrow(UsuarioNotFoundException::new)).get();
     }
 
 
     public Usuario inserirNovoUsuario(UsuarioDto usuarioDto) {
         List<Endereco> listEndereco = new ArrayList<>();
+        List<Celular> listaCelular = new ArrayList<>();
         Usuario usuario = modelMapper.maping().map(usuarioDto, Usuario.class);
         Endereco endereco = modelMapper.maping().map(viaCepService.retornaDadosEndereco(usuarioDto.getCep()), Endereco.class);
-        NumberVerify numberVerify = modelMapper.maping().map(numberVerifyService.retornaDadosNumeroInformado(usuarioDto.getCelular()), NumberVerify.class);
+        NumberVerifyDto numberVerify = modelMapper.maping().map(numberVerifyService.retornaDadosNumeroInformado(usuarioDto.getCelular()), NumberVerifyDto.class);
         listEndereco.add(endereco);
+        listaCelular.add(numberVerifyService.carregaCelular(numberVerify));
         usuario.setEndereco(listEndereco);
+        usuario.setContato(listaCelular);
         return usuarioRepository.save(usuario);
     }
 
 
     public UsuarioDto atualizarUsuario(UsuarioDto usuarioDto, Long id) {
-        this.retornaUsuarioPorId(id).ifPresent(x -> usuarioRepository.save(modelMapper.maping().map(usuarioDto, Usuario.class)));
+        Optional.of(this.retornaUsuarioPorId(id)).ifPresent(x -> usuarioRepository.save(modelMapper.maping().map(usuarioDto, Usuario.class)));
         return usuarioDto;
     }
 
